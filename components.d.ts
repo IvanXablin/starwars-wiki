@@ -10,5 +10,6 @@ declare module '@vue/runtime-core' {
     ElButton: typeof import('element-plus/es')['ElButton']
     Footer: typeof import('./src/components/footer/Footer.vue')['default']
     Header: typeof import('./src/components/header/Header.vue')['default']
+    NavCard: typeof import('./src/components/navcard/NavCard.vue')['default']
   }
 }

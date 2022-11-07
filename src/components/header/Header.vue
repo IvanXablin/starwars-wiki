@@ -16,7 +16,7 @@
   justify-content: space-around;
   align-items: center;
   height: 80px;
-  background: #212121;
+  background: rgba(33, 33, 33, 0.85);
   opacity: 0.85;
 
   img {
