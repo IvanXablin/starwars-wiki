@@ -53,9 +53,9 @@ const props = defineProps({
   }
 
   &__description {
-    margin: 10px 0 5px 0;
+    margin: 10px 0;
     font-family: 'Cairo', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     color: #9d9b9b;
   }
 }
