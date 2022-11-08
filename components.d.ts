@@ -8,6 +8,9 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
+    ElTimeline: typeof import('element-plus/es')['ElTimeline']
+    ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     Footer: typeof import('./src/components/footer/Footer.vue')['default']
     Header: typeof import('./src/components/header/Header.vue')['default']
     NavCard: typeof import('./src/components/navcard/NavCard.vue')['default']

@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import Layout from "./layout/Layout.vue";
-import NavCard from "./components/navcard/NavCard.vue";
+import Layout from "./layout/Layout.vue"
+import NavCard from "./components/navcard/NavCard.vue"
+
+const urlLogoPlanet = "/src/assets/images/planeta.png"
+const urlLogoNave = "/src/assets/images/nave.png"
+const urlLogoHelmet = "/src/assets/images/stormtrooper.png"
 </script>
 
 <template>
@@ -14,9 +18,21 @@ import NavCard from "./components/navcard/NavCard.vue";
         <p class="page-info__content">Here you find everything you need to know about the StarWars universe.</p>
     </div>
     <div class="home-page__navigation">
-        <nav-card />
-        <nav-card />
-        <nav-card />
+        <nav-card
+            :logo-url="urlLogoHelmet"
+            title="Characters"
+            description="Here you can find information about all the characters in the StarWars universe"
+        />
+        <nav-card
+            :logo-url="urlLogoPlanet"
+            title="Planets"
+            description="Here you can find information about all the planets in the StarWars universe"
+        />
+        <nav-card
+            :logo-url="urlLogoNave"
+            title="Starships"
+            description="Here you can find information about all the starships in the StarWars universe"
+        />
     </div>
   </div>
 </div>
@@ -57,7 +73,9 @@ import NavCard from "./components/navcard/NavCard.vue";
   &__navigation {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0 0 0;
   }
 }
 .page-info {
