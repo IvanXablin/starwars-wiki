@@ -9,21 +9,21 @@
 <style lang="scss" scoped>
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 80px;
+  padding: 20px 10px;
   background: rgba(33, 33, 33, 0.85);
   opacity: 0.85;
 
   &__about {
     font-family: 'Cairo', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
   }
 
   &__warning {
     font-family: 'Cairo', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
   }
 

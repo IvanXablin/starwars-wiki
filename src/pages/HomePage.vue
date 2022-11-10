@@ -25,7 +25,9 @@ onMounted(() => {
   <layout>
     <div class="home-page">
       <div class="home-page__content">
-        <img class="home-page__logo" src="/src/assets/images/logoYellow.png" />
+        <div class="home-page__logo">
+          <img src="/src/assets/images/logoYellow.png" />
+        </div>
         <div class="home-page__info page-info">
           <p class="page-info__header">Star Wars Wiki</p>
           <p class="page-info__description">Star Wars Wiki the most complete wikipedia about the StarWars universe.</p>
@@ -88,16 +90,23 @@ onMounted(() => {
   }
 
   &__logo {
-    width: 700px;
-    margin: 10px 0;
+    max-width: 700px;
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      margin: 15px 0;
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 720px;
-    height: 150px;
+    justify-content: center;
+    max-width: 720px;
+    width: 100%;
+    height: 200px;
     margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
@@ -116,7 +125,8 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 720px;
+    max-width: 720px;
+    width: 100%;
     margin: 50px 0;
     background: rgba(33, 33, 33, 0.75);
     color: white;
