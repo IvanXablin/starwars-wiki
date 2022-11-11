@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { View } from '@element-plus/icons-vue'
+
 const props = defineProps({
   logoUrl: String,
   title: String,
@@ -24,8 +25,10 @@ const props = defineProps({
   flex-wrap: wrap;
   align-content: center;
   max-width: 350px;
+  max-height: 215px;
+  min-height: 200px;
   width: 100%;
-  height: 180px;
+  height: 100%;
   margin: 30px 50px;
   padding: 10px;
   background: rgba(33, 33, 33, 0.75);
