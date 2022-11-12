@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import { View } from '@element-plus/icons-vue'
+import {useRouter} from "vue-router";
 
 const props = defineProps({
   logoUrl: String,
   title: String,
   description: String
 });
+
+const router = useRouter()
+
+const handleRedirectPage = (): void => {
+  router.push(`/${props.title?.toLowerCase()}`);
+}
 </script>
 
 <template>
@@ -14,7 +21,7 @@ const props = defineProps({
   <div class="nav-card__content">
       <p class="nav-card__title">{{ props.title }}</p>
       <p class="nav-card__description">{{ description }}</p>
-      <el-button type="info" :icon="View">View more</el-button>
+      <el-button type="info" :icon="View" @click="handleRedirectPage">View more</el-button>
   </div>
 </div>
 </template>

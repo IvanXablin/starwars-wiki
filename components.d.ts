@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    DataCard: typeof import('./src/components/PeopleCard/PeopleCard.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
@@ -15,8 +16,9 @@ declare module '@vue/runtime-core' {
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     Footer: typeof import('./src/components/footer/Footer.vue')['default']
-    Header: typeof import('./src/components/header/Header.vue')['default']
-    NavCard: typeof import('./src/components/navcard/NavCard.vue')['default']
+    Header: typeof import('./src/components/Header/Header.vue')['default']
+    NavCard: typeof import('./src/components/NavCard/NavCard.vue')['default']
+    PeopleCard: typeof import('./src/components/PeopleCard/PeopleCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Layout from "@/layout/Layout.vue";
-import NavCard from "@/components/navcard/NavCard.vue";
+import NavCard from "@/components/NavCard/NavCard.vue";
 import axiosService from "@/api/AxiosService";
-import {onMounted, ref} from "vue";
-import {TFilms} from "@/types/TFilms";
+import { onMounted, ref } from "vue";
+import { TFilms } from "@/types/TFilms";
 
 const urlLogoPlanet = "/src/assets/images/planeta.png";
 const urlLogoNave = "/src/assets/images/nave.png";
@@ -11,7 +11,7 @@ const urlLogoHelmet = "/src/assets/images/stormtrooper.png";
 
 const films = ref<TFilms[]>([]);
 
-const fetchFilms = async () => {
+const fetchFilms = async (): Promise<void> => {
     films.value = await axiosService.getFilms();
 };
 
@@ -60,7 +60,7 @@ onMounted(() => {
                   color="#ffdd00"
                   size="large"
               >
-              <div class="timeline-card">
+              <div class="timeline__card timeline-card">
                   <p class="timeline-card__title">{{ film.title }}</p>
                   <p class="timeline-card__episode">Episode {{ film.episode_id }}</p>
                   <p class="timeline-card__date">{{ film.release_date }}</p>

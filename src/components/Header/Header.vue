@@ -4,10 +4,9 @@ import { Menu } from '@element-plus/icons-vue';
 import { ref } from 'vue';
 const drawer = ref(false);
 
-const handleOpenMenu = () => {
+const handleOpenMenu = (): void => {
   drawer.value = true;
 }
-
 </script>
 
 <template>
@@ -16,10 +15,10 @@ const handleOpenMenu = () => {
   <el-row :gutter="10" class="hidden-sm-and-down">
     <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
        <nav>
-          <a class="header__link" href="">Home</a>
-          <a class="header__link" href="">Characters</a>
-          <a class="header__link" href="">Planets</a>
-          <a class="header__link" href="">Starships</a>
+          <a class="header__link" href="/">Home</a>
+          <a class="header__link" href="/characters">Characters</a>
+          <a class="header__link" href="/planets">Planets</a>
+          <a class="header__link" href="/starships">Starships</a>
       </nav>
     </el-col>
   </el-row>
@@ -30,10 +29,10 @@ const handleOpenMenu = () => {
       </el-icon>
       <el-drawer v-model="drawer" :with-header="false" size="50%">
           <div class="menu">
-              <a class="menu__link" href="">Home</a>
-              <a class="menu__link" href="">Characters</a>
-              <a class="menu__link" href="">Planets</a>
-              <a class="menu__link" href="">Starships</a>
+              <a class="menu__link" href="/">Home</a>
+              <a class="menu__link" href="/characters">Characters</a>
+              <a class="menu__link" href="/planets">Planets</a>
+              <a class="menu__link" href="/starships">Starships</a>
           </div>
       </el-drawer>
     </el-col>
