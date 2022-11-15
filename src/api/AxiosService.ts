@@ -2,7 +2,7 @@ import axios from "axios";
 import { TFilms } from "@/types/TFilms";
 import { TCharacters } from "@/types/TCharacters";
 import { TStarships } from "@/types/TStarships";
-import { TPlanents } from "@/types/TPlanents";
+import { TPlanets } from "@/types/TPlanets";
 
 class AxiosService {
     async getFilms(): Promise<TFilms[]> {
@@ -15,9 +15,9 @@ class AxiosService {
         return response.data;
     }
 
-    async getPlanets(): Promise<TPlanents[]> {
+    async getPlanets(): Promise<TPlanets> {
         const response = await axios.get("https://swapi.dev/api/planets");
-        return response.data.results;
+        return response.data;
     }
 
     async getStarships(): Promise<TStarships[]> {

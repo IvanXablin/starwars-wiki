@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import HomePage from "@/pages/HomePage.vue";
 import CharactersPage from "@/pages/CharactersPage.vue";
+import PlanetsPage from "@/pages/PlanetsPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -13,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
     },
     {
         path: '/planets',
-        component: CharactersPage,
+        component: PlanetsPage,
     },
     {
         path: '/starships',
