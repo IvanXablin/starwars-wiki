@@ -15,7 +15,7 @@ declare module '@vue/runtime-core' {
     ElRow: typeof import('element-plus/es')['ElRow']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
-    Footer: typeof import('./src/components/footer/Footer.vue')['default']
+    Footer: typeof import('./src/components/Footer/Footer.vue')['default']
     Header: typeof import('./src/components/Header/Header.vue')['default']
     NavCard: typeof import('./src/components/NavCard/NavCard.vue')['default']
     PeopleCard: typeof import('./src/components/PeopleCard/PeopleCard.vue')['default']

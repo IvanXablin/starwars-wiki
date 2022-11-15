@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { TCharacter } from "@/types/TCharacters";
-import { PropType } from "vue";
 
-const props = defineProps({
-    character: Object as PropType<TCharacter | undefined>,
-});
+const props = defineProps<{
+  character: TCharacter | undefined,
+}>();
 </script>
 
 <template>
@@ -32,17 +31,15 @@ const props = defineProps({
   height: 100%;
   margin: 20px;
   padding: 25px;
-  border-radius: 30px 0 30px 0;
+  border-radius: 30px 0;
   background: rgba(33, 33, 33, 0.55);
 
   &__title {
-    font-family: 'Cairo', sans-serif;
     font-size: 38px;
     font-weight: bolder;
   }
 
   &__info {
-    font-family: 'Cairo', sans-serif;
     font-size: 16px;
   }
 

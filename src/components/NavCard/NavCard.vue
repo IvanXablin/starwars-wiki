@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { View } from '@element-plus/icons-vue'
-import {useRouter} from "vue-router";
+import { View } from "@element-plus/icons-vue";
+import { useRouter } from "vue-router";
 
-const props = defineProps({
-  logoUrl: String,
-  title: String,
-  description: String
-});
+const props = defineProps<{
+  logoUrl: string,
+  title: string,
+  description: string,
+}>();
 
-const router = useRouter()
+const router = useRouter();
 
 const handleRedirectPage = (): void => {
   router.push(`/${props.title?.toLowerCase()}`);
@@ -17,7 +17,7 @@ const handleRedirectPage = (): void => {
 
 <template>
 <div class="nav-card">
-  <img class="nav-card__logo" :src="props.logoUrl"/>
+  <img class="nav-card__logo" :src="props.logoUrl" alt=""/>
   <div class="nav-card__content">
       <p class="nav-card__title">{{ props.title }}</p>
       <p class="nav-card__description">{{ description }}</p>
@@ -39,7 +39,7 @@ const handleRedirectPage = (): void => {
   margin: 30px 50px;
   padding: 10px;
   background: rgba(33, 33, 33, 0.75);
-  border-radius: 30px 0 30px 0;
+  border-radius: 30px 0;
 
   &__content {
     display: flex;
@@ -59,14 +59,12 @@ const handleRedirectPage = (): void => {
   }
 
   &__title {
-    font-family: 'Cairo', sans-serif;
     font-weight: bold;
     font-size: 32px;
   }
 
   &__description {
     margin: 10px 0;
-    font-family: 'Cairo', sans-serif;
     font-size: 13px;
     color: #9d9b9b;
   }

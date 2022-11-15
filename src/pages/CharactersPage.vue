@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Layout from '@/layout/Layout.vue';
-import PeopleCard from '@/components/PeopleCard/PeopleCard.vue';
+import Layout from "@/layout/Layout.vue";
+import PeopleCard from "@/components/PeopleCard/PeopleCard.vue";
 import axiosService from '@/api/AxiosService';
-import { onMounted, ref } from 'vue';
-import { TCharacters } from '@/types/TCharacters';
+import { onMounted, ref } from "vue";
+import { TCharacters } from "@/types/TCharacters";
 
 const characters = ref<TCharacters | undefined>();
 
@@ -11,7 +11,7 @@ const fetchCharacters = async (): Promise<void> => {
     characters.value = await axiosService.getCharacters();
 };
 
-onMounted(() => {
+onMounted((): void => {
   fetchCharacters();
 });
 </script>
@@ -21,13 +21,13 @@ onMounted(() => {
     <div class="characters-page">
       <div class="characters-page__header">
           <p class="characters-page__counter">Total cards: {{ characters?.count }}</p>
-          <img src="src/assets/images/stormtrooper.png" />
+          <img src="src/assets/images/stormtrooper.png" alt="" />
       </div>
       <div class="characters-page__content">
           <people-card
-              v-for="c in characters?.results"
-              :key="c.name"
-              :character="c"
+              v-for="character in characters?.results"
+              :key="character.name"
+              :character="character"
           />
       </div>
     </div>
@@ -63,7 +63,6 @@ onMounted(() => {
 
   &__counter {
     margin: 0 20px;
-    font-family: 'Cairo', sans-serif;
     font-weight: bold;
     font-size: 36px;
     text-transform: uppercase;

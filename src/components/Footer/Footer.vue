@@ -1,9 +1,9 @@
 <template>
-<footer class="footer">
+<div class="footer">
   <p class="footer__about">StarWars API</p>
   <p class="footer__warning">TM & © Lucasfilm Ltd. All Rights Reserved</p>
-  <img class="footer__icon" src="src/assets/images/gh_icon.png" />
-</footer>
+  <img class="footer__icon" src="src/assets/images/gh_icon.png" alt=""/>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -12,23 +12,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 155px;
+  font-size: 14px;
+  text-align: center;
   background: rgba(33, 33, 33, 0.85);
+  color: white;
   opacity: 0.85;
 
   &__about {
     margin: 10px 0;
-    font-family: 'Cairo', sans-serif;
-    font-size: 14px;
-    text-align: center;
-    color: white;
   }
 
   &__warning {
     margin: 10px 0;
-    font-family: 'Cairo', sans-serif;
-    font-size: 14px;
-    text-align: center;
-    color: white;
   }
 
   &__icon {

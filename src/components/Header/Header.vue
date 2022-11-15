@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import 'element-plus/theme-chalk/display.css';
-import { Menu } from '@element-plus/icons-vue';
-import { ref } from 'vue';
+import "element-plus/theme-chalk/display.css";
+import { Menu } from "@element-plus/icons-vue";
+import { ref } from "vue";
+
 const drawer = ref(false);
 
 const handleOpenMenu = (): void => {
@@ -11,7 +12,7 @@ const handleOpenMenu = (): void => {
 
 <template>
 <header class="header">
-  <img class="header__logo" src="src/assets/images/logo.svg" />
+  <img class="header__logo" src="src/assets/images/logo.svg" alt=""/>
   <el-row :gutter="10" class="hidden-sm-and-down">
     <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
        <nav>
@@ -51,8 +52,8 @@ const handleOpenMenu = (): void => {
 
   &__logo {
     max-width: 550px;
-    width: 25%;
     min-width: 160px;
+    width: 25%;
   }
 
   &__link {
@@ -60,18 +61,16 @@ const handleOpenMenu = (): void => {
     font-size: 17px;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: 'Cairo', sans-serif;
     color: #ffffff;
 
     &:hover {
-      color:  yellow;
+      color: yellow;
     }
   }
 
   @media screen and (max-width:1320px)  {
     padding: 20px 120px;
   }
-
 
   @media screen and (max-width:900px)  {
     padding: 20px 35px;
@@ -88,7 +87,6 @@ const handleOpenMenu = (): void => {
     font-size: 21px;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: 'Cairo', sans-serif;
     font-weight: bolder;
     color: #ffffff;
 

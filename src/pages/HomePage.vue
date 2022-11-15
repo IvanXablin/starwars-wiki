@@ -15,7 +15,7 @@ const fetchFilms = async (): Promise<void> => {
     films.value = await axiosService.getFilms();
 };
 
-onMounted(() => {
+onMounted((): void => {
     fetchFilms();
 });
 
@@ -26,7 +26,7 @@ onMounted(() => {
     <div class="home-page">
       <div class="home-page__content">
         <div class="home-page__logo">
-          <img src="/src/assets/images/logoYellow.png" />
+          <img src="/src/assets/images/logoYellow.png" alt=""/>
         </div>
         <div class="home-page__info page-info">
           <p class="page-info__header">Star Wars Wiki</p>
@@ -60,7 +60,7 @@ onMounted(() => {
                   color="#ffdd00"
                   size="large"
               >
-              <div class="timeline__card timeline-card">
+              <div class="timeline-card">
                   <p class="timeline-card__title">{{ film.title }}</p>
                   <p class="timeline-card__episode">Episode {{ film.episode_id }}</p>
                   <p class="timeline-card__date">{{ film.release_date }}</p>
@@ -132,7 +132,6 @@ onMounted(() => {
     color: white;
 
     h1 {
-      font-family: 'Cairo', sans-serif;
       font-weight: lighter;
       margin: 15px 0;
     }
@@ -142,7 +141,6 @@ onMounted(() => {
 .page-info {
   &__header {
     margin: 0 0 10px 0;
-    font-family: 'Cairo', sans-serif;
     font-weight: 500;
     font-size: 35px;
     text-align: center;
@@ -151,7 +149,6 @@ onMounted(() => {
 
   &__description {
     margin: 0 0 10px 0;
-    font-family: 'Cairo', sans-serif;
     font-size: 18px;
     text-align: center;
     color: #9d9b9b;
@@ -159,12 +156,10 @@ onMounted(() => {
 }
 
 .timeline-card {
-  font-family: 'Cairo', sans-serif;
   color: white;
 
   &__title {
     margin: 10px 0;
-    font-family: 'Cairo', sans-serif;
     font-weight: bolder;
     font-size: 30px;
     color: yellow;
@@ -172,7 +167,6 @@ onMounted(() => {
 
   &__episode {
     margin: 5px 0;
-    font-family: 'Cairo', sans-serif;
     font-weight: lighter;
     font-size: 16px;
     color: white;
@@ -180,7 +174,6 @@ onMounted(() => {
 
   &__date {
     margin: 10px 0;
-    font-family: 'Cairo', sans-serif;
     font-weight: lighter;
     font-size: 15px;
     color: white;
