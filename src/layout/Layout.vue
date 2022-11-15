@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import Header from "../components/Header/Header.vue";
-import Footer from "../components/Footer/Footer.vue";
+import HeaderComponent from "@/components/HeaderComponent/HeaderComponent.vue";
+import FooterComponent from "@/components/FooterComponent/FooterComponent.vue";
 </script>
 
 <template>
-  <Header/>
+  <header-component/>
   <div class="main">
     <slot>
 
     </slot>
   </div>
-  <Footer/>
+  <footer-component/>
 </template>
 
 <style lang="scss" scoped>

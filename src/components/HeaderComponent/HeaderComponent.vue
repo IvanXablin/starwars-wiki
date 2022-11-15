@@ -16,10 +16,10 @@ const handleOpenMenu = (): void => {
   <el-row :gutter="10" class="hidden-sm-and-down">
     <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
        <nav>
-          <a class="header__link" href="/">Home</a>
-          <a class="header__link" href="/characters">Characters</a>
-          <a class="header__link" href="/planets">Planets</a>
-          <a class="header__link" href="/starships">Starships</a>
+          <router-link class="header__link" to="/">Home</router-link>
+          <router-link class="header__link" to="/characters">Characters</router-link>
+          <router-link class="header__link" to="/planets">Planets</router-link>
+          <router-link class="header__link" to="/starships">Starships</router-link>
       </nav>
     </el-col>
   </el-row>
@@ -30,10 +30,10 @@ const handleOpenMenu = (): void => {
       </el-icon>
       <el-drawer v-model="drawer" :with-header="false" size="50%">
           <div class="menu">
-              <a class="menu__link" href="/">Home</a>
-              <a class="menu__link" href="/characters">Characters</a>
-              <a class="menu__link" href="/planets">Planets</a>
-              <a class="menu__link" href="/starships">Starships</a>
+              <router-link class="menu__link" to="/">Home</router-link>
+              <router-link class="menu__link" to="/characters">Characters</router-link>
+              <router-link class="menu__link" to="/planets">Planets</router-link>
+              <router-link class="menu__link" to="/starships">Starships</router-link>
           </div>
       </el-drawer>
     </el-col>

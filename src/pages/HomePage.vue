@@ -4,10 +4,7 @@ import NavCard from "@/components/NavCard/NavCard.vue";
 import axiosService from "@/api/AxiosService";
 import { onMounted, ref } from "vue";
 import { TFilms } from "@/types/TFilms";
-
-const urlLogoPlanet = "/src/assets/images/planeta.png";
-const urlLogoNave = "/src/assets/images/nave.png";
-const urlLogoHelmet = "/src/assets/images/stormtrooper.png";
+import { URL_LOGO_PLANET, URL_LOGO_HELMET, URL_LOGO_NAVE } from "@/utils/constants";
 
 const films = ref<TFilms[]>([]);
 
@@ -35,17 +32,17 @@ onMounted((): void => {
         </div>
         <div class="home-page__navigation">
           <nav-card
-              :logo-url="urlLogoHelmet"
+              :logo-url="URL_LOGO_HELMET"
               title="Characters"
               description="Here you can find information about all the characters in the StarWars universe."
           />
           <nav-card
-              :logo-url="urlLogoPlanet"
+              :logo-url="URL_LOGO_PLANET"
               title="Planets"
               description="Here you can find information about all the planets in the StarWars universe."
           />
           <nav-card
-              :logo-url="urlLogoNave"
+              :logo-url="URL_LOGO_NAVE"
               title="Starships"
               description="Here you can find information about all the starships in the StarWars universe."
           />
