@@ -6,23 +6,35 @@ import { TPlanets } from "@/types/TPlanets";
 
 class AxiosService {
     async getFilms(): Promise<TFilms[]> {
-        const response = await axios.get("https://swapi.dev/api/films");
+        const response = await axios.get("https://swapi.py4e.com/api/films");
         return response.data.results;
     }
 
-    async getCharacters(): Promise<TCharacters> {
-        const response = await axios.get("https://swapi.dev/api/people");
+    async getCharacters(page: number): Promise<TCharacters> {
+        const response = await axios.get("https://swapi.py4e.com/api/people",{
+            params: {
+                page: page,
+            }
+        });
         return response.data;
     }
 
-    async getPlanets(): Promise<TPlanets> {
-        const response = await axios.get("https://swapi.dev/api/planets");
+    async getPlanets(page: number): Promise<TPlanets> {
+        const response = await axios.get("https://swapi.py4e.com/api/planets",{
+            params: {
+                page: page,
+            }
+        });
         return response.data;
     }
 
-    async getStarships(): Promise<TStarships[]> {
-        const response = await axios.get("https://swapi.dev/api/starships");
-        return response.data.results;
+    async getStarships(page: number): Promise<TStarships> {
+        const response = await axios.get("https://swapi.py4e.com/api/starships", {
+            params: {
+                page: page,
+            }
+        });
+        return response.data;
     }
 }
 

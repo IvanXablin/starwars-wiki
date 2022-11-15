@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import Layout from "@/layout/Layout.vue";
 import NavCard from "@/components/NavCard/NavCard.vue";
 import axiosService from "@/api/AxiosService";
 import { onMounted, ref } from "vue";
 import { TFilms } from "@/types/TFilms";
 import { URL_LOGO_PLANET, URL_LOGO_HELMET, URL_LOGO_NAVE } from "@/utils/constants";
+import Loader from "@/components/Loader/Loader.vue";
 
 const films = ref<TFilms[]>([]);
+const isLoading = ref(true);
 
 const fetchFilms = async (): Promise<void> => {
     films.value = await axiosService.getFilms();
+    isLoading.value = false;
 };
 
 onMounted((): void => {
@@ -19,58 +21,56 @@ onMounted((): void => {
 </script>
 
 <template>
-  <layout>
-    <div class="home-page">
-      <div class="home-page__content">
-        <div class="home-page__logo">
-          <img src="/src/assets/images/logoYellow.png" alt=""/>
-        </div>
-        <div class="home-page__info page-info">
-          <p class="page-info__header">Star Wars Wiki</p>
-          <p class="page-info__description">Star Wars Wiki the most complete wikipedia about the StarWars universe.</p>
-          <p class="page-info__description">Here you find everything you need to know about the StarWars universe.</p>
-        </div>
-        <div class="home-page__navigation">
-          <nav-card
-              :logo-url="URL_LOGO_HELMET"
-              title="Characters"
-              description="Here you can find information about all the characters in the StarWars universe."
-          />
-          <nav-card
-              :logo-url="URL_LOGO_PLANET"
-              title="Planets"
-              description="Here you can find information about all the planets in the StarWars universe."
-          />
-          <nav-card
-              :logo-url="URL_LOGO_NAVE"
-              title="Starships"
-              description="Here you can find information about all the starships in the StarWars universe."
-          />
-        </div>
-        <div class="home-page__timeline">
-          <h1>Classic Star Wars Movies</h1>
-          <el-timeline>
-              <el-timeline-item
-                  v-for="film in films"
-                  :key="film.episode_id"
-                  placement="top"
-                  color="#ffdd00"
-                  size="large"
-              >
-              <div class="timeline-card">
-                  <p class="timeline-card__title">{{ film.title }}</p>
-                  <p class="timeline-card__episode">Episode {{ film.episode_id }}</p>
-                  <p class="timeline-card__date">{{ film.release_date }}</p>
-                  {{ film.opening_crawl }}
-              </div>
-            </el-timeline-item>
-          </el-timeline>
-        </div>
+  <div class="home-page">
+    <div class="home-page__content">
+      <div class="home-page__logo">
+        <img src="/src/assets/images/logoYellow.png" alt=""/>
+      </div>
+      <div class="home-page__info page-info">
+        <p class="page-info__header">Star Wars Wiki</p>
+        <p class="page-info__description">Star Wars Wiki the most complete wikipedia about the StarWars universe.</p>
+        <p class="page-info__description">Here you find everything you need to know about the StarWars universe.</p>
+      </div>
+      <div class="home-page__navigation">
+        <nav-card
+            :logo-url="URL_LOGO_HELMET"
+            title="characters"
+            description="Here you can find information about all the characters in the StarWars universe."
+        />
+        <nav-card
+            :logo-url="URL_LOGO_PLANET"
+            title="planets"
+            description="Here you can find information about all the planets in the StarWars universe."
+        />
+        <nav-card
+            :logo-url="URL_LOGO_NAVE"
+            title="starships"
+            description="Here you can find information about all the starships in the StarWars universe."
+        />
+      </div>
+      <div class="home-page__timeline">
+        <h1>Classic Star Wars Movies</h1>
+        <loader v-if="isLoading"/>
+        <el-timeline v-else>
+          <el-timeline-item
+              v-for="film in films"
+              :key="film.episode_id"
+              placement="top"
+              color="#ffdd00"
+              size="large"
+          >
+            <div class="timeline-card">
+              <p class="timeline-card__title">{{ film.title }}</p>
+              <p class="timeline-card__episode">Episode {{ film.episode_id }}</p>
+              <p class="timeline-card__date">{{ film.release_date }}</p>
+              {{ film.opening_crawl }}
+            </div>
+          </el-timeline-item>
+        </el-timeline>
       </div>
     </div>
-  </layout>
+  </div>
 </template>
-
 
 <style lang="scss" scoped>
 .home-page {

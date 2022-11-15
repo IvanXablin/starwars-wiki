@@ -11,7 +11,7 @@ const props = defineProps<{
 const router = useRouter();
 
 const handleRedirectPage = (): void => {
-  router.push(`/${props.title?.toLowerCase()}`);
+  router.push({ path: props.title });
 }
 </script>
 
@@ -32,6 +32,7 @@ const handleRedirectPage = (): void => {
   flex-wrap: wrap;
   align-content: center;
   max-width: 350px;
+  min-width: 240px;
   max-height: 215px;
   min-height: 200px;
   width: 100%;
@@ -60,7 +61,8 @@ const handleRedirectPage = (): void => {
 
   &__title {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 22px;
+    text-transform: uppercase;
   }
 
   &__description {

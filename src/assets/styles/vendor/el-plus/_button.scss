@@ -1,8 +1,18 @@
 .el-button {
-    
     &--info{
-        background: yellow;
+        margin: 10px 0;
         border: none;
+        background: yellow;
         color:black;
-    }   
+    }
+
+    &--primary{
+        min-width: 130px;
+        margin: 0 20px;
+        font-size: 15px;
+        border: none;
+        border-radius: 0 20px;
+        background: yellow;
+        color:black;
+    }
 }

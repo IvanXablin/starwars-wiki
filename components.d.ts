@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    DataCard: typeof import('./src/components/PeopleCard/PeopleCard.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
@@ -15,14 +14,14 @@ declare module '@vue/runtime-core' {
     ElRow: typeof import('element-plus/es')['ElRow']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
-    Footer: typeof import('./src/components/FooterComponent/FooterComponent.vue')['default']
     FooterComponent: typeof import('./src/components/FooterComponent/FooterComponent.vue')['default']
-    Header: typeof import('./src/components/HeaderComponent/HeaderComponent.vue')['default']
     HeaderComponent: typeof import('./src/components/HeaderComponent/HeaderComponent.vue')['default']
+    Loader: typeof import('./src/components/Loader/Loader.vue')['default']
     NavCard: typeof import('./src/components/NavCard/NavCard.vue')['default']
     PeopleCard: typeof import('./src/components/PeopleCard/PeopleCard.vue')['default']
     PlanetCard: typeof import('./src/components/PlanetCard/PlanetCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StarshipCard: typeof import('./src/components/StarshipCard/StarshipCard.vue')['default']
   }
 }

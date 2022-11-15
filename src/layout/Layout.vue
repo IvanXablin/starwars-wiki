@@ -6,15 +6,17 @@ import FooterComponent from "@/components/FooterComponent/FooterComponent.vue";
 <template>
   <header-component/>
   <div class="main">
-    <slot>
-
-    </slot>
+    <router-view/>
   </div>
   <footer-component/>
 </template>
 
 <style lang="scss" scoped>
 .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex: 1 1 auto;
+  min-height: 100%;
 }
 </style>

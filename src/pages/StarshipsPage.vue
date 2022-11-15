@@ -1,36 +1,37 @@
 <script setup lang="ts">
 import axiosService from '@/api/AxiosService';
 import { onMounted, ref } from "vue";
-import { TPlanets } from "@/types/TPlanets";
-import PlanetCard from "@/components/PlanetCard/PlanetCard.vue";
+import { TStarships } from "@/types/TStarships";
+import StarshipCard from "@/components/StarshipCard/StarshipCard.vue";
 import Loader from "@/components/Loader/Loader.vue";
-import { URL_LOGO_PLANET } from "@/utils/constants";
+import { URL_LOGO_NAVE } from "@/utils/constants";
 
-const planets = ref<TPlanets | undefined>();
+const starships = ref<TStarships | undefined>();
 const page = ref(1);
 const totalPages = ref(0);
 const isLoading = ref(true);
 
-const fetchPlanets = async (): Promise<void> => {
-  planets.value = await axiosService.getPlanets(page.value);
-  totalPages.value = Math.ceil(planets.value?.count/ 10);
+
+const fetchStarships = async (): Promise<void> => {
+  starships.value = await axiosService.getStarships(page.value);
+  totalPages.value = Math.ceil(starships.value?.count/ 10);
   isLoading.value = false;
 };
 
-const handleNextPage = async (): Promise<void> => {
+const handleNextPage = async (): Promise<void>  => {
   if (page.value < totalPages.value) {
     page.value = page.value + 1;
-    await fetchPlanets();
+    await fetchStarships();
   }
   else {
     return;
   }
 };
 
-const handlePreviousPage = async (): Promise<void> => {
+const handlePreviousPage = async (): Promise<void>  => {
   if (page.value > 1) {
     page.value = page.value - 1;
-    await fetchPlanets();
+    await fetchStarships();
   }
   else {
     return;
@@ -38,7 +39,7 @@ const handlePreviousPage = async (): Promise<void> => {
 };
 
 onMounted((): void => {
-  fetchPlanets();
+  fetchStarships();
 });
 </script>
 
@@ -47,14 +48,14 @@ onMounted((): void => {
     <loader v-if="isLoading"/>
     <template v-else>
       <div class="planets-page__header">
-        <p class="planets-page__counter">Total cards: {{ planets?.count }}</p>
-        <img :src="URL_LOGO_PLANET" alt="" />
+        <p class="planets-page__counter">Total cards: {{ starships?.count }}</p>
+        <img :src="URL_LOGO_NAVE" alt="" />
       </div>
       <div class="planets-page__content">
-        <planet-card
-            v-for="planet in planets?.results"
-            :key="planet.name"
-            :planet="planet"
+        <starship-card
+            v-for="starship in starships?.results"
+            :key="starship.name"
+            :starship="starship"
         />
       </div>
       <div class="planets-page__footer">

@@ -2,7 +2,7 @@
 <div class="footer">
   <p class="footer__about">StarWars API</p>
   <p class="footer__warning">TM & © Lucasfilm Ltd. All Rights Reserved</p>
-  <img class="footer__icon" src="src/assets/images/gh_icon.png" alt=""/>
+  <img class="footer__icon" src="/src/assets/images/gh_icon.png" alt=""/>
 </div>
 </template>
 

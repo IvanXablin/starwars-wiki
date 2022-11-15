@@ -11,8 +11,10 @@ const handleOpenMenu = (): void => {
 </script>
 
 <template>
-<header class="header">
-  <img class="header__logo" src="src/assets/images/logo.svg" alt=""/>
+<div class="header">
+  <router-link class="header__link" to="/">
+    <img class="header__logo" src="/src/assets/images/logo.svg" alt=""/>
+  </router-link>
   <el-row :gutter="10" class="hidden-sm-and-down">
     <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
        <nav>
@@ -38,7 +40,7 @@ const handleOpenMenu = (): void => {
       </el-drawer>
     </el-col>
   </el-row>
-</header>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -53,7 +55,7 @@ const handleOpenMenu = (): void => {
   &__logo {
     max-width: 550px;
     min-width: 160px;
-    width: 25%;
+    width: 50%;
   }
 
   &__link {

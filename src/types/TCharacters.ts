@@ -10,6 +10,6 @@ export type TCharacter = {
 };
 
 export type TCharacters = {
-    count: string,
+    count: number,
     results: TCharacter[],
 };
