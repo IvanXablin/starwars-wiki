@@ -22,6 +22,7 @@ const handleNextPage = async (): Promise<void>  => {
   if (page.value < totalPages.value) {
     page.value = page.value + 1;
     await fetchStarships();
+    window.scrollTo(0,0);
   }
   else {
     return;
@@ -32,6 +33,7 @@ const handlePreviousPage = async (): Promise<void>  => {
   if (page.value > 1) {
     page.value = page.value - 1;
     await fetchStarships();
+    window.scrollTo(0,0);
   }
   else {
     return;
